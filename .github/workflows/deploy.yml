@@ -18,8 +18,8 @@ jobs:
 
       - name: Mask and Print Secrets
         run: |
-          echo "DOCKER_USERNAME: ${DOCKER_USERNAME:0:3}*******"
-          echo "DOCKERHUB_ACCESS_TOKEN: ${DOCKERHUB_ACCESS_TOKEN:0:3}*******"
+          echo "DOCKER_USERNAME: $DOCKER_USERNAME"
+          echo "DOCKERHUB_ACCESS_TOKEN: $DOCKERHUB_ACCESS_TOKEN"
         env:
           DOCKER_USERNAME: ${{ vars.DOCKER_USERNAME }}
           DOCKERHUB_ACCESS_TOKEN: ${{ secrets.DOCKER_PASSWORD }}
