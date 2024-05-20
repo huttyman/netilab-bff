@@ -11,7 +11,7 @@ const router = express.Router();
  *         description: Returns a mysterious string.
  */
 router.get('/', (req, res) => {
-    res.send('Hello from the API!');
+    res.send('Hello from the API! 1.1');
 });
 
 /**
