@@ -18,11 +18,14 @@ jobs:
 
       - name: Mask and Print Secrets
         run: |
-          echo "DOCKER_USERNAME: $DOCKER_USERNAME"
+          echo "DOCKER_USERNAME: $DOCKER_USERNAME ${DOCKER_USERNAME}"
           echo "DOCKERHUB_ACCESS_TOKEN: $DOCKERHUB_ACCESS_TOKEN"
+          echo "ff $TEST ${TEST}"
+          echo "${{ vars.DOCKER_USERNAME }}"
         env:
           DOCKER_USERNAME: ${{ vars.DOCKER_USERNAME }}
           DOCKERHUB_ACCESS_TOKEN: ${{ secrets.DOCKER_PASSWORD }}
+          TEST: "ffffdddd"
 
       - name: Login to Docker Hub
         uses: docker/login-action@v2
