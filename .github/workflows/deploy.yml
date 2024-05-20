@@ -41,6 +41,6 @@ jobs:
           username: ${{ vars.DROPLET_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /netilab-bff
+            cd netilab-bff
             docker-compose pull
             docker-compose up -d
