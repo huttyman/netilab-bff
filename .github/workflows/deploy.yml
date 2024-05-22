@@ -3,7 +3,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - '**'  # This wildcard
+      - 'release'  # This wildcard
 
 jobs:
   build:
@@ -43,4 +43,4 @@ jobs:
           script: |
             cd netilab-bff
             docker-compose pull
-            docker-compose up -d
+            docker-compose -f docker-compose-bff.yml up -d
