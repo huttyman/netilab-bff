@@ -14,7 +14,7 @@ app.use('/asknetilab', asknetilabRoutes);
 setupSwagger(app);
 
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.send('Hello World! 1.4');
 });
 
 app.listen(port, () => {
