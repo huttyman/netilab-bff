@@ -42,5 +42,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd netilab-bff
-            docker-compose pull
+            docker-compose -f docker-compose-bff.yml pull
             docker-compose -f docker-compose-bff.yml up -d
