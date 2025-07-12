@@ -15,3 +15,13 @@ exports.handleQueryNetilabAi = async (req, res) => {
     return res.status(500).json({ error: 'Failed to query AI service' });
   }
 };
+
+exports.handleDocs = async (req, res) => {
+  try {
+    const result = await queryNetilabAiService.getDocs();
+    return res.json(result);
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ error: 'Failed to fetch docs from AI service' });
+  }
+};

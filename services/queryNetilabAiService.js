@@ -27,3 +27,14 @@ exports.queryText = async (text) => {
 
   return response.json();
 };
+
+exports.getDocs = async () => {
+  const response = await fetch('http://python-ai.com/docs');
+
+  if (!response.ok) {
+    const message = await response.text();
+    throw new Error(`API request failed: ${response.status} ${message}`);
+  }
+
+  return response.json();
+};
