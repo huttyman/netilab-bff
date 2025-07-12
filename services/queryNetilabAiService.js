@@ -7,6 +7,8 @@ exports.queryText = async (text) => {
     exact_law_weight: 0.5,
     near_law_weight: 0.5,
   };
+  console.log("payload",payload)
+  console.log("payload string",JSON.stringify(payload))
 
   const response = await fetch('http://python-ai.com/text', {
     method: 'POST',
@@ -16,6 +18,7 @@ exports.queryText = async (text) => {
     },
     body: JSON.stringify(payload),
   });
+  console.log("response",response)
 
   if (!response.ok) {
     const message = await response.text();
