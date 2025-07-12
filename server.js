@@ -16,7 +16,7 @@ app.use('/query-netilab-ai', queryNetilabAiRoutes);
 setupSwagger(app);
 
 app.get('/', (req, res) => {
-    res.send('Hello World! 2.3');
+    res.send('Hello World! 2.4');
 });
 
 app.listen(port, () => {
