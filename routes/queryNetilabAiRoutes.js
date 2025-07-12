@@ -22,4 +22,15 @@ const queryNetilabAiController = require('../controllers/queryNetilabAiControlle
  */
 router.post('/text', queryNetilabAiController.handleQueryNetilabAi);
 
+/**
+ * @swagger
+ * /query-netilab-ai/docs:
+ *   get:
+ *     summary: Retrieve documentation from python-ai service
+ *     responses:
+ *       200:
+ *         description: Successful response
+ */
+router.get('/docs', queryNetilabAiController.handleDocs);
+
 module.exports = router;
