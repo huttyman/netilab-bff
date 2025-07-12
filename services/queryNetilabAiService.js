@@ -8,7 +8,7 @@ exports.queryText = async (text) => {
     near_law_weight: 0.5,
   };
 
-  const response = await fetch('http://python-ai/text/', {
+  const response = await fetch('http://python-ai/text', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
