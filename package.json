@@ -12,6 +12,7 @@
   "dependencies": {
     "express": "^4.19.2",
     "swagger-jsdoc": "^6.2.8",
-    "swagger-ui-express": "^5.0.0"
+    "swagger-ui-express": "^5.0.0",
+    "pg": "^8.11.3"
   }
 }
