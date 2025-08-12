@@ -1,0 +1,25 @@
+-- switch to your DB
+\c netilabdb
+
+-- allow the user to use and create objects in schema public
+GRANT USAGE, CREATE ON SCHEMA public TO netilabuser;
+
+-- (recommended) grant rights on existing objects too
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO netilabuser;
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO netilabuser;
+
+-- (recommended) set defaults for future objects
+ALTER DEFAULT PRIVILEGES IN SCHEMA public
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLES TO netilabuser;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public
+GRANT USAGE, SELECT ON SEQUENCES TO netilabuser;
+
+CREATE TABLE IF NOT EXISTS request_logs (
+    id serial4 NOT NULL,
+    request_time timestamptz NOT NULL,
+    duration_ms int4 NOT NULL,
+    request_text text NULL,
+    doc_ids _int4 NULL,
+    CONSTRAINT request_logs_pkey PRIMARY KEY (id)
+);
+
