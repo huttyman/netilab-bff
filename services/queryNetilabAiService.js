@@ -10,7 +10,7 @@ exports.queryText = async (text) => {
   console.log("payload",payload)
   console.log("payload string",JSON.stringify(payload))
 
-  const response = await fetch('http://python-ai-service:80/text/', {
+  const response = await fetch('http://netilab-ai:80/text/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ exports.queryText = async (text) => {
 };
 
 exports.getDocs = async () => {
-  const response = await fetch('http://python-ai-service:80/docs');
+  const response = await fetch('http://netilab-ai:80/docs');
 
   if (!response.ok) {
     const message = await response.text();
